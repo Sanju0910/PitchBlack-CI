@@ -2,6 +2,9 @@
 
 printf "\e[1;32m \u2730 Recovery Compiler\e[0m\n\n"
 
+# Source Configs
+source $CONFIG
+
 # Echo Loop
 while ((${SECONDS_LEFT:=10} > 0)); do
     printf "Please wait %.fs ...\n" "${SECONDS_LEFT}"
