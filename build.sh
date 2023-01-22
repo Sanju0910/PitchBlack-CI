@@ -187,8 +187,8 @@ mka -j 2 ${TARGET} || { printf "Compilation failed.\n "; free -h; exit 1; }
 echo "::endgroup::"
 
 # Export VENDOR, CODENAME and BuildPath for next steps
-echo "VENDOR=${VENDOR}" >> ${GITHUB_ENV}
-echo "CODENAME=${CODENAME}" >> ${GITHUB_ENV}
-echo "BuildPath=/home/runner/builder" >> ${GITHUB_ENV}
+echo "VENDOR=${VENDOR}" >> ${CIRRUS_ENV}
+echo "CODENAME=${CODENAME}" >> ${CIRRUS_ENV}
+echo "BuildPath=/home/runner/builder" >> ${CIRRUS_ENV}
 
 # TODO:: Add GitHub Release Script Here
