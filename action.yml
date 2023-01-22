@@ -1,0 +1,19 @@
+name: 'Recovery Compiler For Github Actions' 
+author: 'ElytrA8' 
+description: 'Universal Recovery Compiler'
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set Swap Space
+      uses: pierotofy/set-swap-space@master
+      with:
+        swap-size-gb: 10
+           
+    - run: ${GITHUB_ACTION_PATH}/build.sh
+      name: 'Build Recovery'
+      shell: bash
+
+branding:
+  icon: 'box'
+  color: 'black'
