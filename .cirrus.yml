@@ -1,6 +1,6 @@
-CONFIG: config.sh
 env:
     CIRRUS_SHELL: bash
+    CONFIG: config.sh
 
 task:
   name: "Recovery Build"
