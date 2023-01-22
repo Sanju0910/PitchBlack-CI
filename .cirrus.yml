@@ -6,9 +6,8 @@ task:
   name: "Recovery Build"
   timeout_in: 120m
   container:
-      image: ghcr.io/sushrut1101/docker:arch
       cpu: 8
       memory: 20G
       
   Check_script: 
-   - bash -c "$(curl -sL https://raw.githubusercontent.com/Sanju0910/PitchBlack-CI/build.sh)"
+   - bash -c "$(curl -sL https://raw.githubusercontent.com/Sanju0910/PitchBlack-CI/main/build.sh)"
