@@ -10,5 +10,5 @@ task:
       image: ghcr.io/sushrut1101/docker:arch
       memory: 20G
       
-  Check_script: 
-   - bash -c "$(curl -sL https://raw.githubusercontent.com/Sanju0910/PitchBlack-CI/main/build.sh)"
+  Build_script: 
+   - curl -sL https://raw.githubusercontent.com/Sanju0910/PitchBlack-CI/main/build.sh | bash
