@@ -6,8 +6,8 @@ task:
   name: "Recovery Build"
   timeout_in: 120m
   container:
+      image: openjdk:latest
       cpu: 8
-      image: ubuntu-latest
       memory: 20G
       
   Build_script: 
