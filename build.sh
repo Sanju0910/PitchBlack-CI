@@ -18,6 +18,15 @@ if [[ ! ${TZ} == "UTC" ]]; then
 fi
 echo "::endgroup::"
 
+echo "::group::Installation Of git-repo and ghr"
+cd /home/runner || exit 1
+printf "Adding latest stable git-repo and ghr binary...\n"
+curl -sL https://gerrit.googlesource.com/git-repo/+/refs/heads/stable/repo?format=TEXT | base64 --decode  > repo
+curl -s https://api.github.com/repos/tcnksm/ghr/releases/latest | jq -r '.assets[] | select(.browser_download_url | contains("linux_amd64")) | .browser_download_url' | wget -qi -
+tar -xzf ghr_*_amd64.tar.gz --wildcards 'ghr*/ghr' --strip-components 1 && rm -rf ghr_*_amd64.tar.gz
+chmod a+rx ./repo && chmod a+x ./ghr && sudo mv ./repo ./ghr /usr/local/bin/
+echo "::endgroup::"
+
 printf "We are going to build ${FLAVOR}-flavored ${TARGET} for ${CODENAME} from the manufacturer ${VENDOR}\n"
 
 cd ~
