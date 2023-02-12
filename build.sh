@@ -28,6 +28,8 @@ printf "Initializing Repo\n"
 printf "We will be using %s for Manifest source\n" "${MANIFEST}"
 repo init -u ${MANIFEST} || { printf "Repo Initialization Failed.\n"; exit 1; }
 repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags || { printf "Git-Repo Sync Failed.\n"; exit 1; }
+rm -rf vendor/utils
+git clone https://github.com/Sanju0910/vendor_utils vendor/utils
 echo "::endgroup::"
 
 echo "::group::Device and Kernel Tree Cloning"
