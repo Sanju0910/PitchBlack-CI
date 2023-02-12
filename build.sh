@@ -60,7 +60,7 @@ lunch omni_${CODENAME}-${FLAVOR} || { printf "Compilation failed.\n"; exit 1; }
 echo "::endgroup::"
 
 echo "::group::Compilation"
-mka -j 2 ${TARGET} || { printf "Compilation failed.\n "; free -h; exit 1; }
+mka ${TARGET} -j$(nproc --all) || { printf "Compilation failed.\n "; free -h; exit 1; }
 echo "::endgroup::"
 
 sudo apt-get update && sudo apt-get install sshpass -y
