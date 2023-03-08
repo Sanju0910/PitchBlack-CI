@@ -3,12 +3,12 @@
 printf "\e[1;32m \u2730 Recovery Compiler\e[0m\n\n"
 
 echo "::group::Mandatory Variables Checkup"
-if [[ -z ${MANIFEST} ]]; then
+if [[ -z ${https://github.com/plente00/android_device_sony_bahamut_kddi} ]]; then
     printf "Please Provide A Manifest URL with/without Branch\n"
     exit 1
 fi
 # Default TARGET will be recoveryimage if not provided
-export TARGET=pbrp
+export TARGET=bootimage
 # Default FLAVOR will be eng if not provided
 export FLAVOR=${FLAVOR:-eng}
 # Default TZ (Timezone) will be set as UTC if not provided
